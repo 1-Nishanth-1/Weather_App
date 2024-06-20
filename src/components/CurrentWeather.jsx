@@ -15,6 +15,7 @@ export const CurrWeather = ({ place, setPlace, weatherNow, setweatherNow }) => {
                 {weatherNow.current.condition.text}
               </span>
             </h3>
+            <img src={weatherNow.current.condition.icon} alt="" />
           </div>
         )}
       </div>

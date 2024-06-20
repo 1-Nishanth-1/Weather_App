@@ -11,7 +11,7 @@ export const TodaysWeather = ({
     <section className="container">
       {weatherNow && place && (
         <>
-          <div className="row justify-content-center mb-5 ">
+          <div className="row justify-content-center mb-4 mt-2 ">
             <div className="col-7">
               <h1 className="mb-0">
                 {weatherNow.location.name}{" "}

@@ -1,0 +1,14 @@
+/*Author: Nishanth */
+/* importing new-font */
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+ES:wght@100..400&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.logo {
+  font-family: "Playwrite ES", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}

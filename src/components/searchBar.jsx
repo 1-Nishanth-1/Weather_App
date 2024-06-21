@@ -14,7 +14,6 @@ export const SearchBar = ({ setPlace }) => {
   const gettingPlace = (event) => {
     event.preventDefault();
     setPlace(inputPlace.split(",")[0]);
-    console.log(inputPlace.split(",")[0]);
     setInputPlace("");
   };
   //searching api for matches
@@ -25,7 +24,6 @@ export const SearchBar = ({ setPlace }) => {
       )
         .then((response) => response.json())
         .then((response) => setInputList(response));
-      console.log(inputList);
     } else {
       setInputList([]);
     }

@@ -8,7 +8,7 @@ export const TodaysWeather = ({ weatherNow, location }) => {
       {weatherNow && (
         <>
           <div className="row justify-content-center mb-4 pt-3 ">
-            <div className="col-md-7 col-10 weather-data rounded-4 border border-primary border-5">
+            <div className="col-md-7 col-12 weather-data rounded-4 border border-primary border-5">
               <h1 className="mb-0">
                 {location.name}{" "}
                 <span className="float-end">{weatherNow.day.maxtemp_c}°C</span>{" "}

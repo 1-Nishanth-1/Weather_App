@@ -83,6 +83,7 @@ export const FutureWeather = ({ weatherNow }) => {
                 index === futureDay ? "border-danger border-5" : ""
               }`}
               onClick={() => selectNewDay(index)}
+              key={item.date_epoch}
             >
               {item.date}
               <img

@@ -37,43 +37,41 @@ function App() {
         .catch((error) => console.error("Error fetching IP address:", error));
     }
   }, [place, setweatherNow]);
-
   return (
-    <>
-      <BrowserRouter>
-        <SearchBar setPlace={setPlace} />
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <CurrWeather
-                place={place}
-                setPlace={setPlace}
-                weatherNow={weatherNow}
-                setweatherNow={setweatherNow}
-              />
-            }
-          ></Route>
-          {weatherNow && (
-            <>
-              <Route
-                path="todaysweather"
-                element={
-                  <TodaysWeather
-                    weatherNow={weatherNow.forecast.forecastday[0]}
-                    location={weatherNow.location}
-                  />
-                }
-              />
-              <Route
-                path="futureweather"
-                element={<FutureWeather weatherNow={weatherNow} />}
-              />
-            </>
-          )}
-        </Routes>
-      </BrowserRouter>
-    </>
+    weatherNow && (
+      <>
+        <BrowserRouter>
+          <SearchBar setPlace={setPlace} />
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <CurrWeather
+                  place={place}
+                  setPlace={setPlace}
+                  weatherNow={weatherNow}
+                  setweatherNow={setweatherNow}
+                />
+              }
+            ></Route>
+
+            <Route
+              path="todaysweather"
+              element={
+                <TodaysWeather
+                  weatherNow={weatherNow.forecast.forecastday[0]}
+                  location={weatherNow.location}
+                />
+              }
+            />
+            <Route
+              path="futureweather"
+              element={<FutureWeather weatherNow={weatherNow} />}
+            />
+          </Routes>
+        </BrowserRouter>
+      </>
+    )
   );
 }
 

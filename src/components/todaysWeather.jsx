@@ -28,10 +28,10 @@ export const TodaysWeather = ({ weatherNow, location }) => {
             </div>
           </div>
           <div className="row text-center ">
-            {weatherNow.hour.map((hour) => (
+            {weatherNow.hour.map((hour, index) => (
               <div
                 className="col-md-1 col-3 d-flex flex-column py-3 px-3"
-                key={hour.date_epoch}
+                key={index}
               >
                 <h4>{hour.time.split(" ")[1]}</h4>
                 <img src={hour.condition.icon} alt="" />

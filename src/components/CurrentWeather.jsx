@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 export const CurrWeather = ({ place, setPlace, weatherNow, setweatherNow }) => {
+  //display weather at the moment
   return (
     <section className="container">
       <div className="row justify-content-center  ">

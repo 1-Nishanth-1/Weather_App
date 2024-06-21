@@ -17,6 +17,7 @@ export const SearchBar = ({ setPlace }) => {
     console.log(inputPlace.split(",")[0]);
     setInputPlace("");
   };
+  //searching api for matches
   useEffect(() => {
     if (inputPlace) {
       fetch(
@@ -29,6 +30,7 @@ export const SearchBar = ({ setPlace }) => {
       setInputList([]);
     }
   }, [inputPlace]);
+  //navbar
   return (
     <header className=" m-0 p-0 ">
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark py-2">

@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+//To display weather
 
 export const TodaysWeather = ({ weatherNow, location }) => {
   return (

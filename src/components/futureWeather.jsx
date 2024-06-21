@@ -4,10 +4,12 @@ export const FutureWeather = ({ weatherNow }) => {
   const [futureDay, setFutureDay] = useState(1);
   const [DatetoFind, setDatetoFind] = useState();
   const [VeryFuture, setVeryFuture] = useState(null);
+
   const selectNewDay = (index) => {
     setFutureDay(index);
     window.scrollTo(0, 0);
   };
+  //different date working
   const handleSubmit = (e) => {
     e.preventDefault();
     const foundIndex = weatherNow.forecast.forecastday.findIndex(

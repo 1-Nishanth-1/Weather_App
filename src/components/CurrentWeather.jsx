@@ -5,7 +5,7 @@ export const CurrWeather = ({ place, setPlace, weatherNow, setweatherNow }) => {
     <section className="container">
       <div className="row justify-content-center  ">
         {weatherNow && place && (
-          <div className="col-7 weather-data rounded-4 border border-primary border-5">
+          <div className="col-10 weather-data rounded-4 border border-primary border-5">
             <h1 className="mb-0">
               {weatherNow.location.name}{" "}
               <span className="float-end">{weatherNow.current.temp_c}°C</span>{" "}

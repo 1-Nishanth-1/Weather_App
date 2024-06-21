@@ -79,6 +79,7 @@ export const SearchBar = ({ setPlace }) => {
                 <a
                   className="nav-link"
                   href="https://github.com/1-Nishanth-1/Weather_App"
+                  target="_blank"
                 >
                   Link
                 </a>

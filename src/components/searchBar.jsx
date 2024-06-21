@@ -20,7 +20,7 @@ export const SearchBar = ({ setPlace }) => {
   useEffect(() => {
     if (inputPlace) {
       fetch(
-        `https://api.weatherapi.com/v1/search.json?key=452c79a4fa6e4e3684944412242006&q=${inputPlace}&aqi=no`
+        `https://api.weatherapi.com/v1/search.json?key=452c79a4fa6e4e3684944412242006&q=${inputPlace}&aqi=no&days=14`
       )
         .then((response) => response.json())
         .then((response) => setInputList(response));
@@ -53,11 +53,26 @@ export const SearchBar = ({ setPlace }) => {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <NavLink
+                  style={({ isActive }) => {
+                    return isActive ? { color: "#198754" } : {};
+                  }}
                   className="nav-link active"
                   aria-current="page"
                   to="/todaysweather"
                 >
                   Todays Weather
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  style={({ isActive }) => {
+                    return isActive ? { color: "#198754" } : {};
+                  }}
+                  className="nav-link active"
+                  aria-current="page"
+                  to="/futureWeather"
+                >
+                  Future Weather
                 </NavLink>
               </li>
               <li className="nav-item">

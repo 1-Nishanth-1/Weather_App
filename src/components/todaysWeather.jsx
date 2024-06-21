@@ -1,34 +1,25 @@
 import React from "react";
 import { useState, useEffect } from "react";
 
-export const TodaysWeather = ({
-  place,
-  setPlace,
-  weatherNow,
-  setweatherNow,
-}) => {
+export const TodaysWeather = ({ weatherNow, location }) => {
   return (
     <section className="container">
-      {weatherNow && place && (
+      {weatherNow && (
         <>
           <div className="row justify-content-center mb-4 mt-2 ">
             <div className="col-7">
               <h1 className="mb-0">
-                {weatherNow.location.name}{" "}
-                <span className="float-end">
-                  {weatherNow.forecast.forecastday[0].day.maxtemp_c}°C
-                </span>{" "}
+                {location.name}{" "}
+                <span className="float-end">{weatherNow.day.maxtemp_c}°C</span>{" "}
               </h1>
               <h3>
-                {weatherNow.location.region}{" "}
-                <span className="float-end">
-                  {weatherNow.forecast.forecastday[0].day.mintemp_c}°C
-                </span>
+                {location.region}{" "}
+                <span className="float-end">{weatherNow.day.mintemp_c}°C</span>
               </h3>
               <h4>
-                {weatherNow.forecast.forecastday[0].day.condition.text}
+                {weatherNow.day.condition.text}
                 <img
-                  src={weatherNow.forecast.forecastday[0].day.condition.icon}
+                  src={weatherNow.day.condition.icon}
                   alt=""
                   className="float-end"
                 />
@@ -36,7 +27,7 @@ export const TodaysWeather = ({
             </div>
           </div>
           <div className="row text-center">
-            {weatherNow.forecast.forecastday[0].hour.map((hour) => (
+            {weatherNow.hour.map((hour) => (
               <div
                 className="col-1 d-flex flex-column py-3 px-3"
                 key={hour.date_epoch}

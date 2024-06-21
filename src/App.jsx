@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { CurrWeather } from "./components/CurrentWeather";
 import { TodaysWeather } from "./components/todaysWeather";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { FutureWeather } from "./components/futureWeather";
 
 function App() {
   const [place, setPlace] = useState(() => {
@@ -14,7 +15,7 @@ function App() {
   useEffect(() => {
     if (place) {
       fetch(
-        `https://api.weatherapi.com/v1/forecast.json?key=452c79a4fa6e4e3684944412242006&q=${place}&aqi=no`
+        `https://api.weatherapi.com/v1/forecast.json?key=452c79a4fa6e4e3684944412242006&q=${place}&aqi=no&days=14`
       )
         .then((response) => response.json())
         .then((response) => {
@@ -28,7 +29,7 @@ function App() {
           }
         })
         .catch((error) => console.error("Error fetching weather data:", error));
-      localStorage.setItem("weatherAppPlace", place);
+      sessionStorage.setItem("weatherAppPlace", place);
     } else {
       fetch("https://api.ipify.org?format=json")
         .then((response) => response.json())
@@ -53,17 +54,23 @@ function App() {
               />
             }
           ></Route>
-          <Route
-            path="todaysweather"
-            element={
-              <TodaysWeather
-                place={place}
-                setPlace={setPlace}
-                weatherNow={weatherNow}
-                setweatherNow={setweatherNow}
+          {weatherNow && (
+            <>
+              <Route
+                path="todaysweather"
+                element={
+                  <TodaysWeather
+                    weatherNow={weatherNow.forecast.forecastday[0]}
+                    location={weatherNow.location}
+                  />
+                }
               />
-            }
-          ></Route>
+              <Route
+                path="futureweather"
+                element={<FutureWeather weatherNow={weatherNow} />}
+              />
+            </>
+          )}
         </Routes>
       </BrowserRouter>
     </>

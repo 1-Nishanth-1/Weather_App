@@ -37,7 +37,7 @@ export const FutureWeather = ({ weatherNow }) => {
     <>
       <div className="container">
         <div className="row justify-content-center">
-          <form onSubmit={handleSubmit} className="mb-3 col-3">
+          <form onSubmit={handleSubmit} className="mb-3 col-md-3 col-9">
             <input
               type="date"
               value={DatetoFind}
@@ -77,7 +77,7 @@ export const FutureWeather = ({ weatherNow }) => {
         <div className="row  m-2 justify-content-center ">
           {weatherNow.forecast.forecastday?.map((item, index) => (
             <h4
-              className={`col-5 border border-primary rounded-pill border-3 p-3 m-3 weather-data ${
+              className={`col-md-5 ol-10 border border-primary rounded-pill border-3 p-3 m-3 weather-data ${
                 index === futureDay ? "border-danger border-5" : ""
               }`}
               onClick={() => selectNewDay(index)}

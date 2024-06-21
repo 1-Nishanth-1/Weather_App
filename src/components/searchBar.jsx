@@ -76,7 +76,10 @@ export const SearchBar = ({ setPlace }) => {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="">
+                <a
+                  className="nav-link"
+                  href="https://github.com/1-Nishanth-1/Weather_App"
+                >
                   Link
                 </a>
               </li>

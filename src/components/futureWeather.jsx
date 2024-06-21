@@ -76,9 +76,9 @@ export const FutureWeather = ({ weatherNow }) => {
       <div className="container">
         <div className="row  m-2 justify-content-center ">
           {weatherNow.forecast.forecastday?.map((item, index) => (
-            <p
-              className={`col-5 fs-4 border border-primary rounded-pill border-3 p-3 m-3 ${
-                index === futureDay ? "border-danger border-4" : ""
+            <h4
+              className={`col-5 border border-primary rounded-pill border-3 p-3 m-3 weather-data ${
+                index === futureDay ? "border-danger border-5" : ""
               }`}
               onClick={() => selectNewDay(index)}
             >
@@ -90,7 +90,7 @@ export const FutureWeather = ({ weatherNow }) => {
               <span className="float-end">
                 {item.day.maxtemp_c}/{item.day.mintemp_c}
               </span>
-            </p>
+            </h4>
           ))}
         </div>
       </div>

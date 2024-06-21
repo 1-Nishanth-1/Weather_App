@@ -3,11 +3,11 @@ import { useState, useEffect } from "react";
 
 export const TodaysWeather = ({ weatherNow, location }) => {
   return (
-    <section className="container">
+    <section className="container-fluid weatherbox rounded-5 ">
       {weatherNow && (
         <>
-          <div className="row justify-content-center mb-4 mt-2 ">
-            <div className="col-7">
+          <div className="row justify-content-center mb-4 pt-3 ">
+            <div className="col-7 weather-data rounded-4 border border-primary border-5">
               <h1 className="mb-0">
                 {location.name}{" "}
                 <span className="float-end">{weatherNow.day.maxtemp_c}°C</span>{" "}
@@ -26,7 +26,7 @@ export const TodaysWeather = ({ weatherNow, location }) => {
               </h4>
             </div>
           </div>
-          <div className="row text-center">
+          <div className="row text-center ">
             {weatherNow.hour.map((hour) => (
               <div
                 className="col-1 d-flex flex-column py-3 px-3"
